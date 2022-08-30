@@ -7,36 +7,31 @@ public class Main {
 
 //Задание 1
         int[] arr = generateRandomArray();
-        int sum = 0;
-        for (int i = 0; i < arr.length; i++) {
-            sum += arr[i];
-            if (i == arr.length - 1) {
-                System.out.println("Сумма трат за месяц составила " + sum + " рублей");
-            }
+        double sum = 0;
+        for (int j : arr) {
+            sum += j;
+        }
+        {System.out.println("Сумма трат за месяц составила " + sum + " рублей");
+
         }
 //Задание 2
 
-        int maxWaste = -1;
-        int minWaste = sum;
-        for (int i1 : arr) {
-            if (i1 > maxWaste) {
-                maxWaste = i1;
+        double maxWaste = -1;
+        double minWaste = sum;
+        for (int elem : arr) {
+            if (elem > maxWaste) {
+                maxWaste = elem;
             }
         }
-        for (int i2 : arr) {
-            if (i2 < minWaste) {
-                minWaste = i2;
+        for (int part : arr) {
+            if (part < minWaste) {
+                minWaste = part;
             }
         }
         System.out.println("Минимальная сумма трат за день составила " + minWaste + " рублей. Максимальная сумма трат за день составила " + maxWaste + " рублей");
 
 //Задание 3
-        double avgWaste = 0;
-        double sum2 = 0;
-        for (int i3 : arr) {
-            sum2 += i3;
-        }
-        avgWaste = sum2 / arr.length;
+        double avgWaste = sum / arr.length;
         System.out.println("Средняя сумма трат за месяц составила " + avgWaste + " рублей");
 
 
